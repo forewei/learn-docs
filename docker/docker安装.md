@@ -214,7 +214,7 @@ docker cp 容器ID或容器名:容器路径 主机文件路径 #容器中文件�
 docker inspect 容器ID或容器名
 ```
 
-### **实战：****mysql**
+### **实战：mysql**
 
 ```
 docker pull mysql:5.7 
