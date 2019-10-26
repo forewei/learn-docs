@@ -54,3 +54,27 @@ PUT  /{index}/_mapping/ _doc
 
 允许您向现有索引添加字段，或仅更改现有字段的搜索设置。
 
+##### 查询索引映射
+
+GET /{index}/_mapping/ _doc
+
+##### 索引轮转
+
+### 查询操作
+
+##### match查询
+
+ 匹配查询接受文本/数字/日期，分析它们，并构造一个查询。例如: 
+
+GET /{index}/_search
+
+```console
+{
+    "query": {
+        "match" : {
+            "message" : "this is a test"
+        }
+    }
+}
+```
+
