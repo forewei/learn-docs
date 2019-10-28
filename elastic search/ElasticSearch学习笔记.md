@@ -58,6 +58,16 @@ PUT  /{index}/_mapping/ _doc
 
 GET /{index}/_mapping/ _doc
 
+##### 索引查询超过10000限制
+
+PUT {index}/_settings?preserve_existing=true
+
+```
+{
+"max_result_window" : "2000000000"
+}
+```
+
 ##### 索引轮转
 
 ### 查询操作
