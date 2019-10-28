@@ -357,7 +357,7 @@ https://docs.docker.com/compose/compose-file/
 # 基础镜像
 FROM java:8
 # 作者
-MAINTAINER huaan
+MAINTAINER forewei
 # 把可执行jar包复制到基础镜像的根目录下
 ADD eureka-server-2.0.2.RELEASE.jar /eureka-server-2.0.2.RELEASE.jar
 # 镜像要暴露的端口，如要使用端口，在执行docker run命令时使用-p生效
