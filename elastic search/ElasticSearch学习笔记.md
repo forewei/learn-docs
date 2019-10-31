@@ -70,6 +70,64 @@ PUT {index}/_settings?preserve_existing=true
 
 ##### 索引轮转
 
+##### 创建索引模板
+
+对logs*匹配到的索引都用以下配置
+
+PUT _template/template_logs
+
+```
+{
+  "template": "logs*",
+  "settings": {
+    "index": {
+      "number_of_shards": "5",
+      "number_of_replicas": "1",
+      "analysis": {
+        "analyzer": {
+          "default": {
+            "type": "ik_max_word"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+##### 查看索引模板
+
+GET /_teamplate/teamplate_logs
+
+##### 删除索引模板
+
+DELETE /_teamplate/teamplate_logs
+
+修改索引模板
+
+POST /_teamplate/teamplate_logs
+
+```
+{
+  "template": "logs*",
+  "settings": {
+    "index": {
+      "number_of_shards": "10",
+      "number_of_replicas": "1",
+      "analysis": {
+        "analyzer": {
+          "default": {
+            "type": "ik_max_word"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+
+
 ### 查询操作
 
 ##### match查询
