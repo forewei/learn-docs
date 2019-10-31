@@ -85,7 +85,7 @@ docker version
 ```
 #填写自己的加速器地址 
 {
-"registry-mirrors": ["https://zfzbet67.mirror.aliyuncs.com"] 
+"registry-mirrors": ["https://a2cwpiex.mirror.aliyuncs.com"] 
 }
 ```
 
