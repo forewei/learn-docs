@@ -12,9 +12,9 @@
 # 登录阿里云的docker仓库
 $ sudo docker login --username=[用户名] registry.cn-hangzhou.aliyuncs.com
 # 创建指定镜像的tag，归入某个仓库
-$ sudo docker tag [镜像ID] registry.cn-hangzhou.aliyuncs.com/huaan/huaan:[镜像版本号]
+$ sudo docker tag [镜像ID] registry.cn-hangzhou.aliyuncs.com/forewei/forewei:[镜像版本号]
 # 讲镜像推送到仓库
-$ sudo docker push registry.cn-hangzhou.aliyuncs.com/huaan/huaan:[镜像版本号]
+$ sudo docker push registry.cn-hangzhou.aliyuncs.com/forewei/forewei:[镜像版本号]
 ```
 
 3.拉取镜像
