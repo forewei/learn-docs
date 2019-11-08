@@ -103,7 +103,7 @@ GET /_teamplate/teamplate_logs
 
 DELETE /_teamplate/teamplate_logs
 
-修改索引模板
+##### 修改索引模板
 
 POST /_teamplate/teamplate_logs
 
@@ -126,9 +126,26 @@ POST /_teamplate/teamplate_logs
 }
 ```
 
+##### 重建索引
+
+把老索引复制到新索引里
+
+POST _reindex
+
+```
+{
+  "source": {
+    "index": "logs-operat-2019-11"
+  },
+  "dest": {
+    "index": "logs-operat-2019.11"
+  }
+}
+```
 
 
-### 查询操作
+
+#### 查询操作
 
 ##### match查询
 
