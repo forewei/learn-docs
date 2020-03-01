@@ -73,7 +73,7 @@ public class Test {
 
 关于引用和垃圾回收的关系，大家在这里务必脑子里要引入一个新的概念，那就是Java里有不同的引用类型。
 
-分别是强引用，软引用，弱引用，虚引用。下面分别用代码示范一下。
+分别是**强引用，软引用，弱引用，虚引用**。下面分别用代码示范一下。
 
 强引用，就是类似下面的代码：
 
@@ -112,3 +112,32 @@ public class Test {
 虚引用，这个大家其实暂时忽略他也行，因为很少用。
 
 其实这里比较常用的，就是强引用和软引用，强引用就是代表绝对不能回收的对象。软引用就是说有的对象可有可无，如果内存实在不够了，可以回收他。
+
+### finalize()方法的作用
+
+现在我们理解完了GC Roots和引用类型的概念，基本都知道了，哪些对象可以回收，哪些对象不能回收。
+
+有GC Roots引用的对象不能回收，没有GC Roots引用的对象可以回收，如果有GC Roots引用，但是如果是软引用或者弱引用，也有可能被回收掉。
+
+接着就是到**回收的环节了，假设没有GC Roots引用的对象，是一定立马被回收吗？**
+
+其实不是的，这里有一个finalize()方法可以拯救他自己，看下面的代码。
+
+```java
+public class ReplicaManager {
+    public static ReplicaManager instance;
+    @Override
+    protected void finalize() throws Throwable {
+        ReplicaManager.instance = this;
+    }
+}
+```
+
+假设有一个ReplicaManager 对象要被垃圾回收了，那么假如这个对象重写了Object类中的finialize()方法
+
+此时会先尝试调用一下他的finalize()方法，看是否把自己这个实例对象给了某个GC Roots变量，比如说代码中就给了ReplicaManager类的静态变量。
+
+如果重新让某个GC Roots变量引用了自己，那么就不用被垃圾回收了。
+
+不过说实话，这个东西没必要过多分析，因为平时用的很少。
+

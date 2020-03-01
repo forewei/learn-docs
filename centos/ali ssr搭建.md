@@ -163,4 +163,9 @@ firewall-cmd --zone=public --remove-port=80/tcp --permanent
 
 
 
-## 
+### trojan安装脚本
+
+```
+curl -O https://raw.githubusercontent.com/atrandys/trojan/master/trojan_centos7.sh && chmod +x trojan_centos7.sh && ./trojan_centos7.sh
+```
+
