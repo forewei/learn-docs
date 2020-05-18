@@ -39,4 +39,5 @@ PasswordAuthentication yes/no
 ```
  service sshd restart 
 ```
-
+#### 修改hostname
+hostnamectl set-hostname forewei
