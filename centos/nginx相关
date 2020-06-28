@@ -1,0 +1,1 @@
+nginx 启动找不到pid   nginx -c /etc/nginx/nginx.conf
